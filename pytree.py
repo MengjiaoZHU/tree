@@ -16,7 +16,7 @@ end_branch = '└── '
 
 def print_tree(cpath, padding):
     children = [child for child in os.listdir(cpath) if not child.startswith('.')]
-    children = sorted(children, key = lambda x: re.sub('[^a-zA-Z0-9]+', '', x).lower())
+    children = sorted(children, key=lambda x: re.sub('[^a-zA-Z0-9]+', '', x).lower())
     chidren_in_array = []
     for child in children:
         if child[0] != '.':
@@ -44,16 +44,17 @@ def print_tree(cpath, padding):
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         print(".")
-        current_path = os.getcwd() + '/'
-    elif len(sys.argv) == 2:
-        temp = sys.argv[1] + '/'
+        current_path = os.getcwd()
+    # elif len(sys.argv) == 2:
+    else:
+        temp = sys.argv[1]
         if temp[0] != '/':
             current_path = '/' + temp
         else:
             current_path = temp
         print(temp)
-    else:
-        print("Too many parameters! Please check it!")
-        sys.exit()
+    # else:
+    #     print("Too many parameters! Please check it!")
+    #     sys.exit()
     dir_num, file_num = print_tree(current_path, "")
     print('\n' + str(dir_num) + " directories, " + str(file_num) + " files")
