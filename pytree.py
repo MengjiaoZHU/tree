@@ -44,7 +44,7 @@ def print_tree(cpath, padding):
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         print(".")
-        current_path = os.getcwd()
+        current_path = '.'
     # elif len(sys.argv) == 2:
     else:
         temp = sys.argv[1]
