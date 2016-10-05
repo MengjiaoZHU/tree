@@ -44,10 +44,10 @@ def print_tree(cpath, padding):
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         print(".")
-        current_path = '.'
+        current_path = '.' + '/'
     # elif len(sys.argv) == 2:
     else:
-        temp = sys.argv[1]
+        temp = sys.argv[1] + '/'
         if temp[0] != '/':
             current_path = '/' + temp
         else:
