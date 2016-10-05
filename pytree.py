@@ -40,14 +40,14 @@ def print_tree(cpath, padding):
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         print(".")
-        current_path = '.' + '/'
+        current_path = os.getcwd() + '/'
     # elif len(sys.argv) == 2:
     else:
-        temp = sys.argv[1] + '/'
+        temp = sys.argv[1]
         if temp[0] != '/':
-            current_path = '/' + temp
+            current_path = os.getcwd() + '/' + temp + '/'
         else:
-            current_path = temp
+            current_path = temp + '/'
         print(temp)
     dir_num, file_num = print_tree(current_path, "")
     print('\n' + str(dir_num) + " directories, " + str(file_num) + " files")
